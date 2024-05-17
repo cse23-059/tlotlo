@@ -1,0 +1,340 @@
+
+*{
+    box-sizing: border-box;
+}
+:root{
+    --primary-color:#fff;
+    --secondary-color:black;
+}
+body{
+    background-color:black ;
+    font-family: 'Poppins',sans-serif;
+    margin:0;
+}
+    
+header{
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between; /* Align items with equal spacing */
+    align-items: center; /* Vertically center items */
+    background-color: black; /* Set the background color of the header */
+    padding: 10px 20px; /* Add padding to the header */
+
+}
+
+.nav-elements {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Vertically center items */
+}
+
+
+
+.search{
+    border: 2px solid var(--secondary-color);
+    padding:0.5rem 2rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.movie{
+    width: 300px;
+    margin: 1rem;
+    border-radius: 3px;
+    box-shadow: 0.2px 4px 5px rgba(0,0,0,0.1);
+    background-color: var(--primary-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.movie img {
+
+    width: 100%;
+}
+.movie-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem 1rem;
+    letter-spacing: 0.5px;
+}
+.movie-info span{
+    background-color: black;
+    color: #fff;
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    font-weight: bold;
+}
+.overview{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color:black;
+    color: #fff;
+    padding: 1rem;
+    max-height: 100%;
+    transform: translateY(101%);
+    transition: transform 0.3s ease-in;
+}
+.movie:hover .overview{
+    transform: translateY(0);
+}
+section {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.625;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+    display: flex;
+    flex-wrap: wrap;
+    color: #fff;
+    background-color: #1a1a1a;
+}
+
+.footer {
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-copyright {
+    flex: 1;
+}
+
+.footer-social {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.footer-social a {
+    margin-left: 10px;
+    color: #fff;
+}
+
+.footer-social svg {
+    width: 40px; /* Adjust the size of the social media icons */
+    height: 40px; /* Adjust the size of the social media icons */
+    fill: #fff; 
+}
+
+.footer-policy {
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-policy nav {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-policy a {
+    margin-right: 15px;
+    color: #fff;
+    text-decoration: none;
+}
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.header-menu {
+    list-style: none;
+    display: flex;
+    margin-left: 120px;
+    margin-right: 20px; /* Adjust as needed */
+}
+
+.header-menu li {
+    margin-right: 50px; /* Adjust as needed */
+}
+
+.header-menu li:last-child {
+    margin-right: 0;
+}
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    color: #818181;
+    cursor: pointer;
+}
+
+button {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: white;
+    z-index: 2;
+}
+
+.logo {
+    width: 100px; /* Adjust the width of the logo as needed */
+    margin-top: 10px; /* Adjust the top margin of the logo as needed */
+}
+
+.header-btn {
+    text-decoration: none;
+    border-radius: 3px;
+    padding: 7px;
+    margin-top: 10px;
+    color: #fff;
+    background:black;
+    font-weight: 600;
+    margin-left: 10px; /* Add left margin between header buttons */
+}
+#tag{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+}
+.tag{
+    color: #fff;
+    padding: 10px 15px;
+    background-color:grey;
+    border-radius:50px ;
+    margin: 5px;
+    display: inline-block;
+    cursor: pointer
+    ;
+}
+.tag.highlight{
+    background-color: white;
+    color: #111;
+}
+.nav-elements {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Vertically center items */
+}
+
+.sidebar {
+    height: 100%;
+    width: 0; /* Initially hidden */
+    position:fixed;
+    top: 0;
+    left: 0;
+    background-color: #111; /* Dark background color */
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px; /* Add padding to push content below the sidebar */
+    z-index: 1;
+}
+
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+.sidebar .dropdown-content {
+    display: none;
+    background-color: #111;
+    padding-left: 20px;
+}
+
+.sidebar .dropdown-content a {
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    color: #818181;
+    transition: 0.3s;
+}
+
+.sidebar .dropdown-content a:hover {
+    color: #f1f1f1;
+}
+
+.sidebar .dropdown:hover .dropdown-content {
+    display: block;
+}
+.movie-info{
+    background-color: #fff;
+    color:black;
+    font-size: 16px;
+    font-weight: bold;
+    display: inline;
+    border-radius: 10px;
+
+}
+/* The Overlay (background) */
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+    height: 100%;
+    width: 0;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+  }
+  
+  /* Position the content inside the overlay */
+  .overlay-content {
+    position: relative;
+    top: 25%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+  }
+  
+  /* The navigation links inside the overlay */
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+  }
+  
+  /* Position the close button (top right corner) */
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+  
+  /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+  @media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+    }
+  }
+
